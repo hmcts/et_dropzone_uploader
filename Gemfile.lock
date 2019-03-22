@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    et_dropzone_uploader (0.1.0)
+    et_dropzone_uploader (0.2.0)
       dropzonejs-rails (~> 0.8)
       rails (~> 5.2.2)
 
