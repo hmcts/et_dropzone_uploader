@@ -2,6 +2,11 @@
 
 This gem follows SemVer.
 
+## 1.0.2 - 2019-03-28
+
+### Fixed
+* Icons are now picked up by Rails
+
 ## 1.0.1 - 2019-03-28
 
 ### Added
