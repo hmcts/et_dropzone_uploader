@@ -2,6 +2,17 @@
 
 This gem follows SemVer.
 
+## 1.0.1 - 2019-03-28
+
+### Added
+* Icons for Dropzone element
+
+### Changed
+* Add manifest details to README
+
+### Security
+* Bump to Rails 5.2.3
+
 ## 1.0.0 - 2019-03-26
 
 ### Added
