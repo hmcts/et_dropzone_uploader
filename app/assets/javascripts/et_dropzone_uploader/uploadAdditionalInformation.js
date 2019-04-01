@@ -1,6 +1,6 @@
+Dropzone.autoDiscover = false;
 window.EtDropzoneUploader = {};
 window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
-    Dropzone.autoDiscover = false;
 
     const uploadForm = $(formId);
     let provider;
