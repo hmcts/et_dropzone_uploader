@@ -2,7 +2,12 @@
 
 This gem follows SemVer.
 
-## 2.0.0 - 2019-04-01
+## 2.0.1 - 2019-04-02
+
+### Fixed
+* Add `rack-proxy` dependency
+
+## 2.0.0 - 2019-04-02
 
 ### Fixed
 * 'Dropzone already attached' error
