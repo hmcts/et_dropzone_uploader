@@ -35,6 +35,13 @@ You will also need to require the gem in your asset manifests.
 ```css
 *= require et_dropzone_uploader 
 ```
+
+The gem must be mounted within your `config/routes.rb` as follows:
+
+```ruby
+  mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'
+```
+
 ### I18n Strings
 
 The gem will expect your application to have strings for `drag_text`, `or_text` and `upload_button` under the `i18n_location` parameter.

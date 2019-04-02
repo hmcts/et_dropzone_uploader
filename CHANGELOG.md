@@ -2,6 +2,14 @@
 
 This gem follows SemVer.
 
+## 2.0.0 - 2019-04-01
+
+### Fixed
+* 'Dropzone already attached' error
+
+### Added
+* Routing within gem
+
 ## 1.0.2 - 2019-03-28
 
 ### Fixed
