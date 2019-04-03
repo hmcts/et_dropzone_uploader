@@ -2,6 +2,11 @@
 
 This gem follows SemVer.
 
+## 2.0.2 - 2019-04-03
+
+### Changed
+* Output `div` element instead of `form` element
+
 ## 2.0.1 - 2019-04-02
 
 ### Fixed

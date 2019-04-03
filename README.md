@@ -1,5 +1,5 @@
 # et_dropzone_uploader
-This gem enables forms for Employment Tribunals (i.e. ET1 and ET3) to upload files to AWS/Azure directly from the browser via Dropzone.
+This gem creates a `div` element for Employment Tribunals (i.e. ET1 and ET3), enabling them to upload files to AWS/Azure directly from the browser via Dropzone.
 
 ## Usage
 The gem utilises named parameters. Your project must use [slim](https://github.com/slim-template/slim) and
