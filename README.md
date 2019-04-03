@@ -1,5 +1,5 @@
 # et_dropzone_uploader
-This gem enables forms for Employment Tribunals (i.e. ET1 and ET3) to upload files to AWS/Azure directly from the browser via Dropzone.
+This gem creates a `div` element for Employment Tribunals (i.e. ET1 and ET3), enabling them to upload files to AWS/Azure directly from the browser via Dropzone.
 
 ## Usage
 The gem utilises named parameters. Your project must use [slim](https://github.com/slim-template/slim) and
@@ -35,6 +35,13 @@ You will also need to require the gem in your asset manifests.
 ```css
 *= require et_dropzone_uploader 
 ```
+
+The gem must be mounted within your `config/routes.rb` as follows:
+
+```ruby
+  mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'
+```
+
 ### I18n Strings
 
 The gem will expect your application to have strings for `drag_text`, `or_text` and `upload_button` under the `i18n_location` parameter.

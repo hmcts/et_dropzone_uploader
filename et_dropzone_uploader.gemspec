@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 5.2.2"
   spec.add_dependency 'dropzonejs-rails', '~> 0.8'
+  spec.add_dependency 'rack-proxy', '~> 0.6.5'
 end

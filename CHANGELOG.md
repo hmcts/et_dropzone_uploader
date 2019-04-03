@@ -2,6 +2,24 @@
 
 This gem follows SemVer.
 
+## 2.0.2 - 2019-04-03
+
+### Changed
+* Output `div` element instead of `form` element
+
+## 2.0.1 - 2019-04-02
+
+### Fixed
+* Add `rack-proxy` dependency
+
+## 2.0.0 - 2019-04-02
+
+### Fixed
+* 'Dropzone already attached' error
+
+### Added
+* Routing within gem
+
 ## 1.0.2 - 2019-03-28
 
 ### Fixed

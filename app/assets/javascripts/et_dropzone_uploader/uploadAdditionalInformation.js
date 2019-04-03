@@ -1,6 +1,6 @@
+Dropzone.autoDiscover = false;
 window.EtDropzoneUploader = {};
 window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
-    Dropzone.autoDiscover = false;
 
     const uploadForm = $(formId);
     let provider;
@@ -114,6 +114,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
     let removedButton, uploadKey;
 
     const DROPZONE_OPTIONS = {
+        url: '/',
         init: function () {
             this.on("maxfilesexceeded", function (file) {
                 // TODO: RST-1220 - Error Handling:
@@ -179,7 +180,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
             }
         }
     };
-    
+
     const dropzoneUploadForm = new Dropzone(formId, DROPZONE_OPTIONS);
 
 };
