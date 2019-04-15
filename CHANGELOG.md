@@ -2,6 +2,11 @@
 
 This gem follows SemVer.
 
+## 2.1.0 - 2019-04-15
+
+### Fixed
+* Use `Dropzone.options.params` instead of `input` elements as there is no `form`
+
 ## 2.0.2 - 2019-04-03
 
 ### Changed
