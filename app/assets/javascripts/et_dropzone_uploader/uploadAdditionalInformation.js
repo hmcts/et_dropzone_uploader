@@ -2,7 +2,6 @@ Dropzone.autoDiscover = false;
 window.EtDropzoneUploader = {};
 window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
 
-    const uploadForm = $(formId);
     let provider;
 
     // Source:
@@ -17,19 +16,18 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
         dropzoneUploadForm.options.url = url;
     }
 
-    function prepareAwsHiddenInputs(formContainer, fullResponseData) {
+    function prepareAwsHiddenInputs(fullResponseData) {
         // TODO: RST-1676 Remove this code
-        const responseData = fullResponseData.data;
-
-        formContainer.append(
-            `<input type='hidden' name='key' id='aws_key' value='${responseData.fields["key"]}'>`,
-            `<input type='hidden' name='policy' id='aws_policy' value='${responseData.fields["policy"]}'>`,
-            `<input type='hidden' name='x-amz-algorithm' id='aws_x-amz-algorithm' value='${responseData.fields["x-amz-algorithm"]}'>`,
-            `<input type='hidden' name='x-amz-credential' id='aws_x-amz-credential' value='${responseData.fields["x-amz-credential"]}'>`,
-            `<input type='hidden' name='x-amz-date' id='aws_x-amz-date' value='${responseData.fields["x-amz-date"]}'>`,
-            `<input type='hidden' name='x-amz-signature' id='aws_x-amz-signature' value='${responseData.fields["x-amz-signature"]}'>`,
-            `<input type='hidden' name='success_action_status' id='success_action_status' value='${responseData.fields["success_action_status"]}'>`
-        );
+        const responseData = fullResponseData.data.fields;
+        dropzoneUploadForm.options.params = {
+            key: responseData["key"],
+            policy: responseData["policy"],
+            "x-amz-algorithm": responseData["x-amz-algorithm"],
+            "x-amz-credential": responseData["x-amz-credential"],
+            "x-amz-date": responseData["x-amz-date"],
+            "x-amz-signature": responseData["x-amz-signature"],
+            success_action_status: responseData["success_action_status"]
+        };
     }
 
     function buildUpload(cb) {
@@ -150,7 +148,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
                     })
                 } else {
                     // TODO: RST-1676 Remove the 'else' statement
-                    prepareAwsHiddenInputs(uploadForm, presignedData);
+                    prepareAwsHiddenInputs(presignedData);
                     uploadKey = presignedData.data.fields.key;
                     setUploadUrl(presignedData.data.url);
                     removedButton = removeButtonElement($("#upload-button"));
