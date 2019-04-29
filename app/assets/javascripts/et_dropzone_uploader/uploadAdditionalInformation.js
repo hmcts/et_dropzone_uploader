@@ -16,7 +16,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
         dropzoneUploadForm.options.url = url;
     }
 
-    function prepareAwsHiddenInputs(fullResponseData) {
+    function setAwsRequestHeaders(fullResponseData) {
         // TODO: RST-1676 Remove this code
         const responseData = fullResponseData.data.fields;
         dropzoneUploadForm.options.params = {
@@ -136,7 +136,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
             // check cloud provider in this section
             buildUpload(function (presignedData) {
                 provider = presignedData.meta.cloud_provider;
-                if (presignedData.meta.cloud_provider == 'azure') {
+                if (provider === 'azure') {
                     dropzoneUploadForm.options.method = 'put';
                     dropzoneUploadForm.options.headers = {"x-ms-blob-type": "BlockBlob"};
                     getFileHash(file, function(hash) {
@@ -148,7 +148,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
                     })
                 } else {
                     // TODO: RST-1676 Remove the 'else' statement
-                    prepareAwsHiddenInputs(presignedData);
+                    setAwsRequestHeaders(presignedData);
                     uploadKey = presignedData.data.fields.key;
                     setUploadUrl(presignedData.data.url);
                     removedButton = removeButtonElement($("#upload-button"));
@@ -169,7 +169,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
         },
         sending: function(file, xhr) {
             // Source: https://github.com/enyo/dropzone/issues/590#issuecomment-51498225
-            if (provider == 'azure') {
+            if (provider === 'azure') {
                 const send = xhr.send;
                 xhr.send = function() {
                     send.call(xhr, file);
