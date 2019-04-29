@@ -70,7 +70,7 @@ en:
 Add this line to your application's Gemfile (please note the `tag` should be your desired version):
 
 ```ruby
-gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.1.0'
+gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.1.1'
 ```
 
 And then execute:
