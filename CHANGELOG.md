@@ -2,6 +2,14 @@
 
 This gem follows SemVer.
 
+## 2.2.0 - 2019-05-10
+
+### Added 
+* Recognise existing file within parent Rails fields upon initialisation
+
+### Fixed
+* Delete key when removing file
+
 ## 2.1.1 - 2019-04-29
 
 ### Security
