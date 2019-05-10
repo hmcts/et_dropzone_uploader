@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version     = EtDropzoneUploader::VERSION
   spec.authors     = ["Efstathios Stivaros"]
   spec.email       = ["efstathiosstivaros@gmail.com"]
-  spec.homepage    = "https://github.com/ministryofjustice/et3/"
+  spec.homepage    = "https://github.com/hmcts/et_dropzone_uploader"
   spec.summary     = "Enables ET forms to upload files via Dropzone"
   spec.description = "This gem enables forms for Employment Tribunals (i.e. ET1 and ET3) to upload files to AWS/Azure directly from the browser via Dropzone."
   spec.license     = "MIT"

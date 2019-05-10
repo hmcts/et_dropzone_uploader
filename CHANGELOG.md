@@ -2,6 +2,15 @@
 
 This gem follows SemVer.
 
+## 2.1.1 - 2019-04-29
+
+### Security
+* Bump nokogiri to 1.10.3
+
+### Changed
+* Update gem homepage
+* Small code tidy-up
+
 ## 2.1.0 - 2019-04-15
 
 ### Fixed
