@@ -121,7 +121,15 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
             });
             this.on("removedfile", function () {
                 $(fileNameId).val(null);
+                $(uploadKeyId).val(null);
             });
+
+            if ($(fileNameId).val()){
+                let existingFile = { name: $(fileNameId).val(), type: 'application/rtf' };
+                this.options.addedfile.call(this, existingFile);
+                existingFile.previewElement.classList.add('dz-success');
+                existingFile.previewElement.classList.add('dz-complete');
+            }
         },
         // Set "Remove File" string by locale
         dictRemoveFile: localisedRemoveFileString(),
