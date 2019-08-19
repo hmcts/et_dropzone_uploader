@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", "~> 5.2.2"
+  spec.add_dependency "rails", ">= 5.2.2", "< 6.1.0"
   spec.add_dependency 'dropzonejs-rails', '~> 0.8'
   spec.add_dependency 'rack-proxy', '~> 0.6.5'
 end
