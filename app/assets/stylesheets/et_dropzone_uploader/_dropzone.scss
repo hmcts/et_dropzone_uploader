@@ -98,3 +98,13 @@
     display: none;
   }
 }
+
+.dz-max-files-reached {
+  pointer-events: none;
+  cursor: default;
+}
+
+.dz-remove {
+  pointer-events: all;
+  cursor: default;
+}

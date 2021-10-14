@@ -170,9 +170,14 @@ window.EtDropzoneUploader.init = function (formId, uploadKeyId, fileNameId) {
         method: "post",
         // Add a link to remove files that were erroneously uploaded
         addRemoveLinks: true,
-        complete: function (file) {
+        success: function (file) {
             appendButtonElement(removedButton);
             // Take upload URL and pass it into the second form
+            $(uploadKeyId).val(uploadKey);
+            $(fileNameId).val(file.name);
+        },
+        canceled: function (file) {
+            appendButtonElement(removedButton)
             $(uploadKeyId).val(uploadKey);
             $(fileNameId).val(file.name);
         },
